@@ -16,6 +16,8 @@ server.use((req, res, next) => {
 server.use(middlewares);
 server.use(router);
 
+server.use(jsonServer.static(path.join(__dirname, "public")));
+
 server.listen(3000, () => {
   console.log("JSON Server is running on port 5000");
 });
